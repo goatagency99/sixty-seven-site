@@ -216,12 +216,31 @@
 }
 .filters{position:sticky!important;top:0;z-index:45;background:rgba(247,245,240,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);padding-top:10px!important;padding-bottom:10px!important;box-shadow:0 8px 18px -12px rgba(15,15,15,.25)}
 .product-actions{justify-content:flex-start}
+@media(max-width:720px){.brand-logo{height:46px}}
+.brand-logo{height:62px;width:auto;display:block}
+.foot-logo{height:96px;width:auto;display:block;filter:invert(1);margin-bottom:10px}
+.s67-about{background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 12px 30px rgba(15,15,15,.08)}
+.s67-about-wide{width:100%;display:block;aspect-ratio:3/2;object-fit:cover}
+.s67-about-row{display:grid;grid-template-columns:1fr;gap:0}
+.s67-about-txt{padding:26px 28px 24px}
+.s67-about-txt h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4vw,44px);margin:6px 0 10px;letter-spacing:-.03em}
+.s67-about-txt p{margin:0;color:#3b3a37;line-height:1.6;max-width:520px}
+.s67-about-pt{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;object-position:75% 40%}
+@media(min-width:800px){.s67-about-row{grid-template-columns:1fr 1fr;align-items:stretch}.s67-about-txt{align-self:center;padding:34px 40px}.s67-about-pt{height:100%;aspect-ratio:auto;min-height:340px}.s67-about-wide{aspect-ratio:2/1}}
+.s67-rv{display:grid!important;grid-template-columns:1fr;gap:14px;overflow:visible!important}
+@media(min-width:800px){.s67-rv{grid-template-columns:repeat(3,1fr)}}
+.gb-rv-card{padding:0!important;overflow:hidden;min-height:0!important;gap:0!important;justify-content:flex-start!important;border-radius:26px!important;background:#fff!important;flex:none!important}
+.gb-rv-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.gb-rv-card .rv-b{padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px}
+.gb-rv-card .rv-st{color:#e0a800;letter-spacing:2px;font-size:14px;opacity:1}
+.gb-rv-card p{font-size:15px!important;line-height:1.45!important;font-style:normal!important}
+.gb-rv-card small{font-size:10.5px;opacity:.5;letter-spacing:.08em;text-transform:uppercase}
 </style>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Navigare principală">
-      <a class="brand" href="#top" aria-label="Sixty Seven — pagina principală"><span class="brand-word">Sixty <em>Seven</em></span></a>
+      <a class="brand" href="#top" aria-label="Sixty Seven — pagina principală"><img class="brand-logo" src="/logo.webp" alt="Sixty7 Bakery"></a>
       <div class="nav-links"><a href="#produse">Produse</a><a href="#categorii">Torturi</a><a href="#echipa">Echipa</a></div>
       <a class="nav-cta" href="#categorii">Vezi torturile <span aria-hidden="true">↓</span></a>
     </nav>
@@ -240,7 +259,7 @@
     <section class="products-section" id="produse">
       <div class="section-heading"><div><div class="eyebrow">Din vitrina noastră</div></div></div>
       <div class="filters" role="group" aria-label="Filtrează produsele">
-        <button class="filter active" data-filter="all">Toate</button><button class="filter" data-filter="paine">Pâine</button><button class="filter" data-filter="cozonac">Cozonac</button><button class="filter" data-filter="prajituri">Prăjituri &amp; Tarte</button><button class="filter" data-filter="torturi">Torturi</button>
+        <button class="filter active" data-filter="all">Toate</button><button class="filter" data-filter="paine">Pâine</button><button class="filter" data-filter="cozonac">Cozonac</button><button class="filter" data-filter="prajituri">Prăjituri &amp; Tarte</button><button class="filter" data-filter="dulceturi">Dulcețuri</button><button class="filter" data-filter="paste">Paste</button><button class="filter" data-filter="torturi">Torturi</button>
       </div>
       <div class="product-grid" id="product-grid"></div>
     </section>
@@ -262,9 +281,10 @@
           <article class="nov-card"><div class="nov-img"><span class="nov-badge">NOU</span><img src="/pavlova-zmeura.webp" alt="Pavlova cu zmeură și căpșuni" loading="lazy"><a class="nov-plus" href="#produse" aria-label="Vezi produsele">+</a></div><h3>Pavlova cu zmeură și căpșuni</h3></article><article class="nov-card"><div class="nov-img"><span class="nov-badge">NOU</span><img src="/tarta-fistic.webp" alt="Tartă cu zmeură și fistic" loading="lazy"><a class="nov-plus" href="#produse" aria-label="Vezi produsele">+</a></div><h3>Tartă cu zmeură și fistic</h3></article><article class="nov-card"><div class="nov-img"><span class="nov-badge">NOU</span><img src="/mini-foietaj.webp" alt="Mini prăjitură din foietaj" loading="lazy"><a class="nov-plus" href="#produse" aria-label="Vezi produsele">+</a></div><h3>Mini prăjitură din foietaj</h3></article><article class="nov-card"><div class="nov-img"><span class="nov-badge">NOU</span><img src="/tarta-pecan.webp" alt="Tartă cu nucă pecan" loading="lazy"><a class="nov-plus" href="#produse" aria-label="Vezi produsele">+</a></div><h3>Tartă cu nucă pecan</h3></article>
         </div>
       </div></section>
-    <section class="s67-team" id="echipa"><div class="s67-team-card"><img src="/echipa.webp" alt="Echipa Sixty Seven, patiserie" loading="lazy"><div><h2>Echipa Sixty Seven</h2><p>Pâine cu maia, cozonaci, pavlova, tarte, prăjituri și torturi, pregătite artizanal de echipa noastră de patiseri.</p></div></div></section>
+    <section class="s67-team" id="echipa"><div class="s67-about"><img class="s67-about-wide" src="/vitrina.webp" alt="Vitrina cu prăjituri și pâine Sixty Seven Bakery" loading="lazy"><div class="s67-about-row"><div class="s67-about-txt"><div class="eyebrow">Patiseria noastră</div><h2>Sixty Seven Bakery</h2><p>Pâine cu maia, cozonaci, pavlova, tarte, prăjituri și torturi, pregătite artizanal, în fiecare zi.</p></div><img class="s67-about-pt" src="/femeie.webp" alt="Patiser Sixty Seven Bakery în fața vitrinei cu pâine" loading="lazy"></div></div></section>
+    <section class="gb-reviews" id="recenzii"><div class="gb-rv-inner"><div class="eyebrow">Recenzii Google</div><h2>Ce spun clienții</h2><div class="gb-rv-grid s67-rv"><article class="gb-rv-card"><img src="/review-1.webp" alt="Pâine cu maia în coș" loading="lazy"><div class="rv-b"><span class="rv-st">★★★★★</span><p>Pâine cu maia, cu crustă aurie, legată cu sfoară, exact ca la bunica.</p><small>Poză de la un client</small></div></article><article class="gb-rv-card"><img src="/review-2.webp" alt="Prăjituri în cutie" loading="lazy"><div class="rv-b"><span class="rv-st">★★★★★</span><p>Choux-uri cu cremă fină, fructe și ciocolată. Una mai frumoasă decât alta.</p><small>Poză de la un client</small></div></article><article class="gb-rv-card"><img src="/review-3.webp" alt="Tort roz de 18 ani" loading="lazy"><div class="rv-b"><span class="rv-st">★★★★★</span><p>Tortul pentru majorat, cu fluturi roz și accente aurii, a fost vedeta serii.</p><small>Poză de la un client</small></div></article></div></div></section>
   </main>
-  <footer class="footer gb-foot" id="locatie"><div class="gb-foot-in"><div class="gb-foot-top"><div class="gb-foot-brand"><div class="foot-word">Sixty <em>Seven</em></div><span>Patiserie artizanală</span></div></div><div class="gb-foot-bot"><span>© 2026 Sixty Seven. Toate drepturile rezervate.</span><a href="#top">Înapoi sus ↑</a></div></div></footer>
+  <footer class="footer gb-foot" id="locatie"><div class="gb-foot-in"><div class="gb-foot-top"><div class="gb-foot-brand"><img class="foot-logo" src="/logo.webp" alt="Sixty7 Bakery"><span>Patiserie artizanală</span></div></div><div class="gb-foot-bot"><span>© 2026 Sixty Seven. Toate drepturile rezervate.</span><a href="#top">Înapoi sus ↑</a></div></div></footer>
   <script>
     const products=[
       {id:'paine-maia',name:'Pâine artizanală cu maia',desc:'Pâine cu maia, cu crustă crocantă și miez aerat.',img:'paine-maia.webp',cat:'paine'},
@@ -279,6 +299,18 @@
       {id:'tarta-fistic',name:'Tartă cu zmeură și fistic',desc:'Tartă cu cremă, zmeură și fistic.',img:'tarta-fistic.webp',cat:'prajituri'},
       {id:'tarta-pecan',name:'Tartă cu nucă pecan',desc:'Tartă cu cremă de caramel și nucă pecan.',img:'tarta-pecan.webp',cat:'prajituri'},
       {id:'prajitura-zmeura',name:'Prăjitură cu zmeură, felie',desc:'Prăjitură cu zmeură și crumble.',img:'prajitura-zmeura.webp',cat:'prajituri'},
+      {id:'mini-tarte-albastre',name:'Mini tarte cu cremă și decor albastru',desc:'Mini tarte cu cremă de vanilie și flori albastre.',img:'mini-tarte-albastre.webp',cat:'prajituri'},
+      {id:'dulceata-capsuni',name:'Dulceață de căpșuni',desc:'Dulceață artizanală de căpșuni, în borcan cu capac de hârtie.',img:'dulceata-capsuni.webp',cat:'dulceturi'},
+      {id:'dulceata-zmeura-1',name:'Dulceață de zmeură, produs artizanal',desc:'Dulceață artizanală de zmeură, Cămara de la munte.',img:'dulceata-zmeura-1.webp',cat:'dulceturi'},
+      {id:'dulceata-zmeura-2',name:'Dulceață de zmeură, produs natural',desc:'Dulceață naturală de zmeură, Cămara de la munte.',img:'dulceata-zmeura-2.webp',cat:'dulceturi'},
+      {id:'paste-tagliatelle-1',name:'Tagliatelle all’uovo',desc:'Paste artizanale cu ou, Sixty7 Pasta Artigianale.',img:'paste-tagliatelle-1.webp',cat:'paste'},
+      {id:'paste-tagliatelle-2',name:'Tagliatelle cu ou, 250 g',desc:'Paste artizanale cu ou, produs în România.',img:'paste-tagliatelle-2.webp',cat:'paste'},
+      {id:'paste-tagliatelle-3',name:'Tagliatelle din grâu dur, 500 g',desc:'Paste din griș de grâu dur, 500 g.',img:'paste-tagliatelle-3.webp',cat:'paste'},
+      {id:'tort-ciocolata-felie',name:'Tort cu ciocolată și zmeură, felie',desc:'Felie de tort cu blat de ciocolată, cremă și zmeură.',img:'tort-ciocolata-felie.webp',cat:'torturi'},
+      {id:'tort-morcovi-felie',name:'Tort de morcovi, felie',desc:'Felie de tort de morcovi cu nucă și cremă de brânză.',img:'tort-morcovi-felie.webp',cat:'torturi'},
+      {id:'tort-morcovi-intreg',name:'Tort de morcovi',desc:'Tort de morcovi cu nucă și cremă de brânză.',img:'tort-morcovi-intreg.webp',cat:'torturi'},
+      {id:'tort-craciun-rosu',name:'Tort de Crăciun roșu, cu fulgi de zăpadă',desc:'Tort în trei etaje, cu fulgi de zăpadă și lumini.',img:'tort-craciun-rosu.webp',cat:'torturi'},
+      {id:'tort-craciun-verde',name:'Tort de Crăciun verde, luminat',desc:'Tort în două etaje, verde cu auriu, cu lumini.',img:'tort-craciun-verde.webp',cat:'torturi'},
       {id:'tort-zmeura',name:'Tort cu zmeură și cremă albă',desc:'Tort cu cremă albă și zmeură.',img:'tort-zmeura.webp',cat:'torturi'},
       {id:'tort-fluturi',name:'Tort roz cu fluturi – La mulți ani',desc:'Tort roz, decorat cu fluturi.',img:'tort-fluturi.webp',cat:'torturi'},
       {id:'tort-ciocolata',name:'Tort cu glazură de ciocolată și căpșună',desc:'Tort cu glazură de ciocolată și căpșună.',img:'tort-ciocolata.webp',cat:'torturi'},
