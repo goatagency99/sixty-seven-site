@@ -185,7 +185,7 @@
 @media(min-width:721px){
 .hero{background:#ece7dc!important}
 .hero:after{background:linear-gradient(90deg,rgba(236,231,220,.8),rgba(236,231,220,.3) 45%,rgba(236,231,220,0) 65%)!important}
-.hero-image{filter:none!important;object-position:right center!important}
+.hero-image{filter:none!important;object-position:50% 30%!important}
 .site-header{background:none!important;backdrop-filter:none!important;color:#121212!important;border-bottom-color:rgba(18,18,18,.15)!important}
 .nav-cta{border-color:rgba(18,18,18,.45)!important}.nav-cta:hover{background:#121212!important;color:#fff!important;border-color:#121212!important}
 .hero-content,.hero h1,.eyebrow{color:#121212!important}
@@ -217,6 +217,25 @@
 .filters{position:sticky!important;top:0;z-index:45;background:rgba(247,245,240,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);padding-top:10px!important;padding-bottom:10px!important;box-shadow:0 8px 18px -12px rgba(15,15,15,.25)}
 .product-actions{justify-content:flex-start}
 @media(max-width:720px){.brand-logo{height:46px}}
+.gb-rv-shop{object-fit:contain!important;object-position:center!important;mix-blend-mode:multiply;background:none!important;width:300px!important;height:200px!important}
+.gb-rv-sum{display:grid!important;grid-template-columns:1fr 128px;column-gap:10px!important;row-gap:4px;align-items:center;padding:18px 16px 18px 20px!important}
+.gb-rv-info{display:contents!important}
+.gb-rv-info b{grid-column:1;grid-row:1;white-space:nowrap;margin:0!important}
+.gb-rv-stars{grid-column:1;grid-row:2;white-space:nowrap}
+.gb-rv-info small{grid-column:1;grid-row:3;white-space:nowrap;margin:0!important}
+.gb-rv-btn{grid-column:1/-1;grid-row:4;justify-self:start;margin-top:10px!important}
+.gb-rv-shop{grid-column:2;grid-row:1/4;width:128px!important;height:128px!important;justify-self:end}
+.hero h1{white-space:nowrap}
+.site-header{position:relative!important;background:#ece7dc!important;z-index:60}
+@media(min-width:721px){
+.hero:after{background:linear-gradient(90deg,rgba(12,10,8,.78),rgba(12,10,8,.5) 38%,rgba(12,10,8,0) 66%)!important}
+.hero-content,.hero h1,.hero p{color:#fff!important}
+.hero h1 em{color:#e6cd93!important}
+.hero .button-ghost{border-color:rgba(255,255,255,.7)!important;color:#fff!important}
+.hero .button-ghost:hover{background:rgba(255,255,255,.14)!important}
+}
+@media(max-width:720px){.hero{padding-top:0!important}}
+.gb-rv-card img{object-position:50% 35%}
 .brand-logo{height:62px;width:auto;display:block}
 .foot-logo{height:96px;width:auto;display:block;filter:invert(1);margin-bottom:10px}
 .s67-about{background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 12px 30px rgba(15,15,15,.08)}
@@ -226,16 +245,8 @@
 .s67-about-txt h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4vw,44px);margin:6px 0 10px;letter-spacing:-.03em}
 .s67-about-txt p{margin:0;color:#3b3a37;line-height:1.6;max-width:520px}
 .s67-about-pt{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;object-position:75% 40%}
-@media(min-width:800px){.s67-about-row{grid-template-columns:1fr 1fr;align-items:stretch}.s67-about-txt{align-self:center;padding:34px 40px}.s67-about-pt{height:100%;aspect-ratio:auto;min-height:340px}.s67-about-wide{aspect-ratio:2/1}}
-.s67-rv{display:grid!important;grid-template-columns:1fr;gap:14px;overflow:visible!important}
-@media(min-width:800px){.s67-rv{grid-template-columns:repeat(3,1fr)}}
-.gb-rv-card{padding:0!important;overflow:hidden;min-height:0!important;gap:0!important;justify-content:flex-start!important;border-radius:26px!important;background:#fff!important;flex:none!important}
-.gb-rv-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
-.gb-rv-card .rv-b{padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px}
-.gb-rv-card .rv-st{color:#e0a800;letter-spacing:2px;font-size:14px;opacity:1}
-.gb-rv-card p{font-size:15px!important;line-height:1.45!important;font-style:normal!important}
-.gb-rv-card small{font-size:10.5px;opacity:.5;letter-spacing:.08em;text-transform:uppercase}
-</style>
+@media(min-width:800px){.s67-about-row{grid-template-columns:1fr 1fr;align-items:stretch}.s67-about-txt{align-self:center;padding:34px 40px}.s67-about-row{grid-template-columns:1fr!important}.s67-about-pt{height:100%;aspect-ratio:auto;min-height:340px}.s67-about-wide{aspect-ratio:2/1}}
+@media(min-width:800px){</style>
 </head>
 <body>
   <header class="site-header">
@@ -247,13 +258,12 @@
   </header>
   <main id="top">
     <section class="hero" aria-label="Sixty Seven, patiserie artizanală">
-      <img class="hero-image" src="/hero.webp" alt="Tartă cu zmeură și fistic, pavlova și mini prăjitură din foietaj Sixty Seven" fetchpriority="high">
-      <div class="hero-vwrap"><img src="/hero-m.webp" alt="Tartă cu zmeură și fistic, pavlova și mini prăjitură din foietaj Sixty Seven"></div>
+      <img class="hero-image" src="/hero.webp" alt="Patiser Sixty Seven în fața vitrinei cu pâine" fetchpriority="high">
+      <div class="hero-vwrap"><img src="/hero-m.webp" alt="Patiser Sixty Seven în fața vitrinei cu pâine"></div>
       <div class="hero-content">
-        <div class="eyebrow">Sixty Seven · Patiserie</div>
-        <h1>Patiserie <br><em>artizanală</em></h1>
+        <h1>Patiserie <em>artizanală</em></h1>
         <p>Pâine cu maia, cozonaci, prăjituri și torturi, făcute artizanal.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#produse">Descoperă produsele <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="#categorii">Vezi torturile</a></div>
+        <div class="hero-actions"><a class="button button-ghost" href="#categorii">Vezi torturile</a></div>
       </div>
     </section>
     <section class="products-section" id="produse">
@@ -265,7 +275,7 @@
     </section>
     <section class="categories" id="categorii">
       <div class="categories-inner">
-        <div class="categories-heading"><div><div class="eyebrow">Pentru zilele speciale</div><h2>Torturi</h2></div></div>
+        <div class="categories-heading"><div><div class="eyebrow">Pentru zilele speciale</div><h2>Torturi la comandă</h2></div></div>
         <div class="category-grid">
           <a class="category-card" href="#produse" data-category-link="torturi"><img src="/tort-ciocolata.webp" alt="Tort cu glazură de ciocolată și căpșună"><div class="category-copy"><div><span>Tort cu ciocolată și căpșună</span><small>Vezi selecția</small></div><b aria-hidden="true">→</b></div></a>
           <a class="category-card" href="#produse" data-category-link="torturi"><img src="/tort-zmeura.webp" alt="Tort cu zmeură și cremă albă"><div class="category-copy"><div><span>Tort cu zmeură și cremă albă</span><small>Vezi selecția</small></div><b aria-hidden="true">→</b></div></a>
@@ -281,8 +291,8 @@
           <article class="nov-card"><div class="nov-img"><span class="nov-badge">NOU</span><img src="/pavlova-zmeura.webp" alt="Pavlova cu zmeură și căpșuni" loading="lazy"><a class="nov-plus" href="#produse" aria-label="Vezi produsele">+</a></div><h3>Pavlova cu zmeură și căpșuni</h3></article><article class="nov-card"><div class="nov-img"><span class="nov-badge">NOU</span><img src="/tarta-fistic.webp" alt="Tartă cu zmeură și fistic" loading="lazy"><a class="nov-plus" href="#produse" aria-label="Vezi produsele">+</a></div><h3>Tartă cu zmeură și fistic</h3></article><article class="nov-card"><div class="nov-img"><span class="nov-badge">NOU</span><img src="/mini-foietaj.webp" alt="Mini prăjitură din foietaj" loading="lazy"><a class="nov-plus" href="#produse" aria-label="Vezi produsele">+</a></div><h3>Mini prăjitură din foietaj</h3></article><article class="nov-card"><div class="nov-img"><span class="nov-badge">NOU</span><img src="/tarta-pecan.webp" alt="Tartă cu nucă pecan" loading="lazy"><a class="nov-plus" href="#produse" aria-label="Vezi produsele">+</a></div><h3>Tartă cu nucă pecan</h3></article>
         </div>
       </div></section>
-    <section class="s67-team" id="echipa"><div class="s67-about"><img class="s67-about-wide" src="/vitrina.webp" alt="Vitrina cu prăjituri și pâine Sixty Seven Bakery" loading="lazy"><div class="s67-about-row"><div class="s67-about-txt"><div class="eyebrow">Patiseria noastră</div><h2>Sixty Seven Bakery</h2><p>Pâine cu maia, cozonaci, pavlova, tarte, prăjituri și torturi, pregătite artizanal, în fiecare zi.</p></div><img class="s67-about-pt" src="/femeie.webp" alt="Patiser Sixty Seven Bakery în fața vitrinei cu pâine" loading="lazy"></div></div></section>
-    <section class="gb-reviews" id="recenzii"><div class="gb-rv-inner"><div class="eyebrow">Recenzii Google</div><h2>Ce spun clienții</h2><div class="gb-rv-grid s67-rv"><article class="gb-rv-card"><img src="/review-1.webp" alt="Pâine cu maia în coș" loading="lazy"><div class="rv-b"><span class="rv-st">★★★★★</span><p>Pâine cu maia, cu crustă aurie, legată cu sfoară, exact ca la bunica.</p><small>Poză de la un client</small></div></article><article class="gb-rv-card"><img src="/review-2.webp" alt="Prăjituri în cutie" loading="lazy"><div class="rv-b"><span class="rv-st">★★★★★</span><p>Choux-uri cu cremă fină, fructe și ciocolată. Una mai frumoasă decât alta.</p><small>Poză de la un client</small></div></article><article class="gb-rv-card"><img src="/review-3.webp" alt="Tort roz de 18 ani" loading="lazy"><div class="rv-b"><span class="rv-st">★★★★★</span><p>Tortul pentru majorat, cu fluturi roz și accente aurii, a fost vedeta serii.</p><small>Poză de la un client</small></div></article></div></div></section>
+    <section class="s67-team" id="echipa"><div class="s67-about"><img class="s67-about-wide" src="/vitrina.webp" alt="Vitrina cu prăjituri și pâine Sixty Seven Bakery" loading="lazy"><div class="s67-about-row"><div class="s67-about-txt"><div class="eyebrow">Patiseria noastră</div><h2>Sixty Seven Bakery</h2><p>Pâine cu maia, cozonaci, pavlova, tarte, prăjituri și torturi, pregătite artizanal, în fiecare zi.</p></div></div></div></section>
+    <section class="gb-reviews" id="recenzii"><div class="gb-rv-inner"><div class="eyebrow">Recenzii Google</div><h2>Ce spun clienții</h2><div class="gb-rv-sum"><div class="gb-rv-info"><b>Sixty Seven Bakery</b><div class="gb-rv-stars"><span>★★★★★</span></div><small>Recenzii pe Google</small><a class="gb-rv-btn" href="https://www.google.com/search?q=sixty+seven+bakery" target="_blank" rel="noopener">Vezi pe Google <span>↗</span></a></div><img class="gb-rv-shop" src="/tort-zmeura.webp" alt="Tort cu zmeură Sixty Seven" loading="lazy"></div><div class="gb-rv-grid"><article class="gb-rv-card"><img src="/review-1.webp" alt="Pâine cu maia în coș" loading="lazy"><div class="rv-b"><span class="rv-st">★★★★★</span><p>Pâine cu maia, cu crustă aurie, legată cu sfoară, exact ca la bunica.</p><small>Poză de la un client</small></div></article><article class="gb-rv-card"><img src="/review-2.webp" alt="Prăjituri în cutie" loading="lazy"><div class="rv-b"><span class="rv-st">★★★★★</span><p>Choux-uri cu cremă fină, fructe și ciocolată. Una mai frumoasă decât alta.</p><small>Poză de la un client</small></div></article><article class="gb-rv-card"><img src="/review-3.webp" alt="Tort roz de 18 ani" loading="lazy"><div class="rv-b"><span class="rv-st">★★★★★</span><p>Tortul pentru majorat, cu fluturi roz și accente aurii, a fost vedeta serii.</p><small>Poză de la un client</small></div></article></div></div></section>
   </main>
   <footer class="footer gb-foot" id="locatie"><div class="gb-foot-in"><div class="gb-foot-top"><div class="gb-foot-brand"><img class="foot-logo" src="/logo.webp" alt="Sixty7 Bakery"><span>Patiserie artizanală</span></div></div><div class="gb-foot-bot"><span>© 2026 Sixty Seven. Toate drepturile rezervate.</span><a href="#top">Înapoi sus ↑</a></div></div></footer>
   <script>
@@ -306,19 +316,17 @@
       {id:'paste-tagliatelle-1',name:'Tagliatelle all’uovo',desc:'Paste artizanale cu ou, Sixty7 Pasta Artigianale.',img:'paste-tagliatelle-1.webp',cat:'paste'},
       {id:'paste-tagliatelle-2',name:'Tagliatelle cu ou, 250 g',desc:'Paste artizanale cu ou, produs în România.',img:'paste-tagliatelle-2.webp',cat:'paste'},
       {id:'paste-tagliatelle-3',name:'Tagliatelle din grâu dur, 500 g',desc:'Paste din griș de grâu dur, 500 g.',img:'paste-tagliatelle-3.webp',cat:'paste'},
-      {id:'tort-ciocolata-felie',name:'Tort cu ciocolată și zmeură, felie',desc:'Felie de tort cu blat de ciocolată, cremă și zmeură.',img:'tort-ciocolata-felie.webp',cat:'torturi'},
-      {id:'tort-morcovi-felie',name:'Tort de morcovi, felie',desc:'Felie de tort de morcovi cu nucă și cremă de brânză.',img:'tort-morcovi-felie.webp',cat:'torturi'},
-      {id:'tort-morcovi-intreg',name:'Tort de morcovi',desc:'Tort de morcovi cu nucă și cremă de brânză.',img:'tort-morcovi-intreg.webp',cat:'torturi'},
-      {id:'tort-craciun-rosu',name:'Tort de Crăciun roșu, cu fulgi de zăpadă',desc:'Tort în trei etaje, cu fulgi de zăpadă și lumini.',img:'tort-craciun-rosu.webp',cat:'torturi'},
-      {id:'tort-craciun-verde',name:'Tort de Crăciun verde, luminat',desc:'Tort în două etaje, verde cu auriu, cu lumini.',img:'tort-craciun-verde.webp',cat:'torturi'},
-      {id:'tort-zmeura',name:'Tort cu zmeură și cremă albă',desc:'Tort cu cremă albă și zmeură.',img:'tort-zmeura.webp',cat:'torturi'},
-      {id:'tort-fluturi',name:'Tort roz cu fluturi – La mulți ani',desc:'Tort roz, decorat cu fluturi.',img:'tort-fluturi.webp',cat:'torturi'},
+      {id:'tort-zmeura',name:'Tort cu zmeură și cremă albă',desc:'Tort cu cremă albă și zmeură. Glisează pentru felia cu ciocolată și zmeură.',img:'tort-zmeura.webp',imgs:['tort-zmeura.webp','tort-ciocolata-felie.webp'],cat:'torturi'},
+      {id:'tort-morcovi-intreg',name:'Tort de morcovi',desc:'Tort de morcovi cu nucă și cremă de brânză.',img:'tort-morcovi-intreg.webp',imgs:['tort-morcovi-intreg.webp','tort-morcovi-felie.webp'],cat:'torturi'},
       {id:'tort-ciocolata',name:'Tort cu glazură de ciocolată și căpșună',desc:'Tort cu glazură de ciocolată și căpșună.',img:'tort-ciocolata.webp',cat:'torturi'},
-      {id:'tort-inima',name:'Tort în formă de inimă cu glazură portocalie',desc:'Tort inimă, cu glazură portocalie.',img:'tort-inima.webp',cat:'torturi'}
+      {id:'tort-inima',name:'Tort în formă de inimă cu glazură portocalie',desc:'Tort inimă, cu glazură portocalie.',img:'tort-inima.webp',cat:'torturi'},
+      {id:'tort-fluturi',name:'Tort roz cu fluturi – La mulți ani',desc:'Tort roz, decorat cu fluturi.',img:'tort-fluturi.webp',cat:'torturi'},
+      {id:'tort-craciun-rosu',name:'Tort de Crăciun roșu, cu fulgi de zăpadă',desc:'Tort în trei etaje, cu fulgi de zăpadă și lumini.',img:'tort-craciun-rosu.webp',cat:'torturi'},
+      {id:'tort-craciun-verde',name:'Tort de Crăciun verde, luminat',desc:'Tort în două etaje, verde cu auriu, cu lumini.',img:'tort-craciun-verde.webp',cat:'torturi'}
     ];
     const grid=document.getElementById('product-grid');
     const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    grid.innerHTML=products.map(p=>`<article class="product-card" data-cat="${p.cat}"><div class="product-image-wrap"><img class="product-image" loading="lazy" src="/${p.img}" alt="${esc(p.name)}"></div><div class="product-info"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p></div></article>`).join('');
+    grid.innerHTML=products.map(p=>`<article class="product-card" data-cat="${p.cat}"><div class="product-image-wrap">${p.imgs?`<div class="pi-slider">${p.imgs.map(x=>`<img class="product-image" loading="lazy" src="/${x}" alt="${esc(p.name)}">`).join('')}</div><span class="pi-dots">${p.imgs.map((x,k)=>`<i${k?'':' class="on"'}></i>`).join('')}</span>`:`<img class="product-image" loading="lazy" src="/${p.img}" alt="${esc(p.name)}">`}</div><div class="product-info"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p></div></article>`).join('');
     const show=f=>document.querySelectorAll('.product-card').forEach(c=>c.hidden=f!=='all'&&c.dataset.cat!==f);
     document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');show(b.dataset.filter)}));
     document.querySelectorAll('[data-category-link]').forEach(l=>l.addEventListener('click',()=>{const f=l.dataset.categoryLink;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x.dataset.filter===f));show(f)}));
