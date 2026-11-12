@@ -374,5 +374,14 @@
 document.querySelectorAll('.filter').forEach(function(b){b.addEventListener('click',function(){requestAnimationFrame(function(){var c=document.querySelector('.product-card:not([hidden])'),f=document.querySelector('.filters');if(!c||!f)return;var y=c.getBoundingClientRect().top+window.scrollY-f.offsetHeight-10;window.scrollTo({top:Math.max(0,y),behavior:'smooth'})})})});
 document.getElementById('order-date').min=new Date().toISOString().slice(0,10);
 </script>
+<style id="rv-desktop">@media(min-width:900px){
+.gb-rv-inner{max-width:980px!important}
+.gb-rv-sum{display:grid!important;grid-template-columns:300px 1fr!important;grid-template-rows:auto auto auto auto!important;column-gap:40px!important;row-gap:6px!important;padding:16px 36px 16px 20px!important;align-content:center!important;align-items:center!important;min-height:0!important}
+.gb-rv-sum .gb-rv-shop{grid-column:1!important;grid-row:1/5!important;width:300px!important;height:260px!important;justify-self:start!important;object-fit:contain!important}
+.gb-rv-info b,.gb-rv-info .gb-rv-stars,.gb-rv-info small,.gb-rv-info .gb-rv-btn{grid-column:2!important;justify-self:start!important}
+.gb-rv-info b{grid-row:1!important;font-size:24px!important}.gb-rv-info .gb-rv-stars{grid-row:2!important}.gb-rv-info small{grid-row:3!important}.gb-rv-info .gb-rv-btn{grid-row:4!important;margin-top:8px!important}
+.gb-rv-grid{justify-content:center!important;overflow:visible!important}
+.gb-rv-card{flex:0 0 calc(33.33% - 10px)!important}
+}</style>
 </body>
 </html>
