@@ -308,7 +308,8 @@
     <div class="cart-list" id="cart-list"></div>
     <p class="drawer-note">Prețurile și disponibilitatea se confirmă direct cu echipa Sixty Seven.</p>
     <label for="order-name">Numele tău</label><input id="order-name" autocomplete="name" placeholder="Nume">
-    <label for="order-message">Detalii comandă</label><textarea id="order-message" placeholder="Data și ora dorită, observații (opțional)"></textarea>
+    <label for="order-date">Data livrării / ridicării</label><input id="order-date" type="date">
+    <label for="order-message">Detalii comandă</label><textarea id="order-message" placeholder="Adresa, ora dorită, observații"></textarea>
     <button class="send-order" id="send-order">Trimite pe WhatsApp</button>
     <div class="copy-hint">Se deschide WhatsApp cu mesajul gata scris; confirmăm disponibilitatea și ora.</div>
   </aside>
@@ -359,7 +360,7 @@
     document.getElementById('cart-list').addEventListener('click',e=>{const b=e.target.closest('[data-qty]');if(!b)return;const id=b.dataset.id,n=(cart.get(id)||0)+Number(b.dataset.qty);if(n<=0)cart.delete(id);else cart.set(id,n);updateCount();renderCart()});
     document.getElementById('cart-fab').addEventListener('click',showDrawer);document.getElementById('open-order').addEventListener('click',showDrawer);document.getElementById('close-drawer').addEventListener('click',hideDrawer);backdrop.addEventListener('click',hideDrawer);document.addEventListener('keydown',e=>{if(e.key==='Escape')hideDrawer()});
     const WA_NUMBER='';document.getElementById('wa-cta').href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent('Bună! Aș dori să fac o comandă la Sixty Seven.');
-    document.getElementById('send-order').addEventListener('click',async()=>{if(!cart.size){notify('Adaugă mai întâi un produs');return}const name=document.getElementById('order-name').value.trim();const extra=document.getElementById('order-message').value.trim();const lines=[...cart].map(([id,q])=>`${q} × ${products.find(p=>p.id===id).name}`);const message=`Bună! Aș dori să comand de la Sixty Seven:\n${lines.join('\n')}${name?`\nNume: ${name}`:''}${extra?`\nDetalii ridicare: ${extra}`:''}\nVă rog să-mi confirmați disponibilitatea și ora. Mulțumesc!`;window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(message),'_blank','noopener');notify('Deschidem WhatsApp…');});
+    document.getElementById('send-order').addEventListener('click',async()=>{if(!cart.size){notify('Adaugă mai întâi un produs');return}const name=document.getElementById('order-name').value.trim();const extra=document.getElementById('order-message').value.trim();const dv=document.getElementById('order-date').value;const dt=dv?dv.split('-').reverse().join('.'):'';const lines=[...cart].map(([id,q])=>`${q} × ${products.find(p=>p.id===id).name}`);const message=`Bună! Aș dori să comand de la Sixty Seven:\n${lines.join('\n')}${name?`\nNume: ${name}`:''}${dt?`\nData livrării: ${dt}`:''}${extra?`\nDetalii ridicare: ${extra}`:''}\nVă rog să-mi confirmați disponibilitatea și ora. Mulțumesc!`;window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(message),'_blank','noopener');notify('Deschidem WhatsApp…');});
   document.querySelectorAll('[data-legal]').forEach(b=>b.addEventListener('click',()=>notify('Pagina se completează înainte de lansare')));
   </script>
 <nav class="gb-dock" id="gb-dock" aria-label="Meniu rapid"><a href="#top" data-t="top" class="on" aria-label="Acasă"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></a><a href="#produse" data-t="produse" aria-label="Produse"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></a><button type="button" id="gb-dock-cart" aria-label="Lista mea"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg></button><a href="#locatie" data-t="locatie" aria-label="Locație"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></a></nav>
@@ -370,6 +371,7 @@
 <script>(function(){var ios=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);document.querySelectorAll(".gb-maps").forEach(function(a){var q=encodeURIComponent(a.dataset.addr);a.href=ios?"https://maps.apple.com/?q="+q:"https://www.google.com/maps/search/?api=1&query="+q});var dock=document.getElementById("gb-dock"),last=window.scrollY||0,tk=false;function f(){var y=window.scrollY||0,dy=y-last;if(y<40)dock.classList.remove("mini");else if(dy>4)dock.classList.add("mini");else if(dy<-4)dock.classList.remove("mini");if(Math.abs(dy)>4||y<40)last=y;tk=false}addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(f)}},{passive:true})})();</script>
 <script>
 document.querySelectorAll('.filter').forEach(function(b){b.addEventListener('click',function(){requestAnimationFrame(function(){var c=document.querySelector('.product-card:not([hidden])'),f=document.querySelector('.filters');if(!c||!f)return;var y=c.getBoundingClientRect().top+window.scrollY-f.offsetHeight-10;window.scrollTo({top:Math.max(0,y),behavior:'smooth'})})})});
+document.getElementById('order-date').min=new Date().toISOString().slice(0,10);
 </script>
 </body>
 </html>
